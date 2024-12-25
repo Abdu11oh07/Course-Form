@@ -1,0 +1,29 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %}My Courses{% endblock %}</title>
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+</head>
+<body>
+    <header>
+        <h1><a href="{% url 'course_list' %}">Mening kurslarim</a></h1>
+        <nav>
+            <ul>
+                <li><a href="{% url 'course_list' %}">Barcha kurlslar</a></li>
+            </ul>
+            <ul>
+                <li><a href="{% url  'add_post' %}">Maqola qo'shish!</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        {% block content %}{% endblock %}
+    </main>
+
+</body>
+</html>
